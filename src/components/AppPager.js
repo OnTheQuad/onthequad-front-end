@@ -4,7 +4,7 @@ import { Pager, PageItem, Pagination } from 'react-bootstrap';
 var AppPager = ({page, num_pages, app, navigate}, context) => (
 	<div>
 		<Pager>
-	    {page <= 1 ? "" : <PageItem previous
+	    <PageItem previous
 	    	disabled={page <= 1}
 	    	href={"?page="+(page-1)}
 	    	onClick={page <= 1 ? () => ({}) : (e) => {
@@ -13,11 +13,12 @@ var AppPager = ({page, num_pages, app, navigate}, context) => (
 		    	}
 	    	}>
 	    	&larr; Prev
-	    </PageItem>}
+	    </PageItem>
 		  <Pagination
 				className="hidden-sm hidden-xs clearfix top-pagination"
-	      ellipsis
-	      boundaryLinks
+				ellipsis={false}
+	      first
+        last
 	      items={num_pages}
 	      maxButtons={5}
 	      activePage={page}
@@ -25,7 +26,7 @@ var AppPager = ({page, num_pages, app, navigate}, context) => (
 	      	e.preventDefault();
 	      	navigate(context.router, {app, page: selectedEvent.eventKey});
 	      }} />
-	    {page >= num_pages ? "" : <PageItem next
+	    <PageItem next
 	    	disabled={page >= num_pages}
 	    	href={"?page="+(page+1)}
 	    	onClick={page >= num_pages ? () => ({}) : (e) => {
@@ -34,7 +35,7 @@ var AppPager = ({page, num_pages, app, navigate}, context) => (
 		    	}
 		    }>
 	    	Next &rarr;
-	    </PageItem>}
+	    </PageItem>
 	  </Pager>
   </div>
 );
