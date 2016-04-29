@@ -41,7 +41,7 @@ const ItemModal = ({ item, show, onHide, user, onClickEdit }) => (
 	    <div className="pull-left">
 	    	ID: {item.id} | Category: {config.categories[numToCategory(item.category)]}
 	    </div>
-	    <div className="pull-right">Last Updated: {item.timestamp}</div>
+	    <div className="pull-right">Last Updated: {item.timestamp ? item.timestamp.slice(0, -3) : ""}</div>
 	  </Modal.Footer>
   </Modal>
 );
