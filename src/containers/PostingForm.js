@@ -132,6 +132,20 @@ class PostingForm extends Component {
             placeholder="Item Name"
             defaultValue={decodeText(item.title) || null}
             ref="title"/>
+          <Input
+              bsStyle={ invalid['category'] ? "error" : null }
+              onChange={ () => this.validate('category') }
+              type="select"
+              label="Category"
+              placeholder="select"
+              defaultValue={decodeText(item.category) || null}
+              ref="category">
+            <option value={0} key={0}></option>
+            {_.map(config.submitCategories, (itemName, itemId)=>{
+              var id = config.categoryToNum(itemId);
+              return <option value={id} key={id}>{itemName}</option>;
+            })}
+          </Input>
           <div className='center-wrapper'>
             <div>
               <Dropzone className="smallbox" accept="image/*" ref="dropzone" onDrop={this.onDrop} >
@@ -167,20 +181,6 @@ class PostingForm extends Component {
             label="Description (1000 character limit)"
             defaultValue={decodeText(item.description) || null}
             ref="description"/>
-          <Input
-              bsStyle={ invalid['category'] ? "error" : null }
-              onChange={ () => this.validate('category') }
-              type="select"
-              label="Category"
-              placeholder="select"
-              defaultValue={decodeText(item.category) || null}
-              ref="category">
-            <option value={0} key={0}></option>
-            {_.map(config.submitCategories, (itemName, itemId)=>{
-              var id = config.categoryToNum(itemId);
-              return <option value={id} key={id}>{itemName}</option>;
-            })}
-          </Input>
           <ButtonInput bsStyle="primary" disabled={status !== 0 || !allFalse(invalid)}
             type="submit" value="Submit"
             onClick={(e) => {
