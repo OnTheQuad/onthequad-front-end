@@ -954,8 +954,8 @@ footer {
 
 .upload-text {
 	text-align: center;
-	height: 200px;
-	line-height: 200px;
+	height: 50px;
+	line-height: 45px;
 }
 
 .slider-container {
@@ -978,4 +978,13 @@ footer {
 
 .pager .disabled>a, .pager .disabled>a:focus, .pager .disabled>a:hover, .pager .disabled>span {
 	color: #eaeaea;
+}
+
+.smallbox {
+	width:200px;
+	height:50px;
+	border-width:2px;
+	border-color:#666;
+	border-style:dashed;
+	border-radius:5px;
 }

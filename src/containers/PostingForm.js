@@ -134,7 +134,7 @@ class PostingForm extends Component {
             ref="title"/>
           <div className='center-wrapper'>
             <div>
-              <Dropzone accept="image/*" ref="dropzone" onDrop={this.onDrop} >
+              <Dropzone className="smallbox" accept="image/*" ref="dropzone" onDrop={this.onDrop} >
                 <div className="upload-text">Click or Drag Image Here</div>
               </Dropzone>
               <br />
