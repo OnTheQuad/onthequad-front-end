@@ -23,7 +23,7 @@ const ItemModal = ({ item, show, onHide, user, onClickEdit }) => (
 				</Col>
 	  	</Row>
 			<div className="price-tag pull-left">
-				<Label bsStyle="primary">${parseFloat(item.cost).toFixed(2)}</Label>
+				<Label bsStyle="default">${parseFloat(item.cost).toFixed(2)}</Label>
 			</div>
 		  { user.userId == item.owner ?
 		  	<div className="row email-row">

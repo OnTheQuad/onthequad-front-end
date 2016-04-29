@@ -22,7 +22,7 @@ class EmailButton extends Component {
 			}}/>;
 		return <div className="row email-row">
 			<Button bsStyle="primary"
-		  	bsSize="small"
+		  	bsSize="medium"
 		  	className="pull-right"
 			  onClick={()=>{
 			  	if (!this.state.on) {
@@ -33,7 +33,7 @@ class EmailButton extends Component {
 					}
 			  	this.setState({ on: !this.state.on});
 			  }}>
-		  	<span className="glyphicon glyphicon-envelope"/>
+		  	Buy <span className="glyphicon glyphicon-envelope"/>
 		  </Button>
 			{emailBox}
 	  </div>
