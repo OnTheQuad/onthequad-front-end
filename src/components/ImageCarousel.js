@@ -82,7 +82,7 @@ const ImageCarousel = React.createClass({
 		}
 
     return (
-    	<div style={{width: '242px', backgroundColor: 'white'}}>
+    	<div style={{textAlign: 'center', width: '242px', backgroundColor: 'white'}}>
 	    	<Carousel item={item} decorators={Decorators} cellAlign="center">
 	          {carouselContent}
 		    </Carousel>

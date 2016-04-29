@@ -13,16 +13,18 @@ const ItemModal = ({ item, show, onHide, user, onClickEdit }) => (
 	  </Modal.Header>
 	  <Modal.Body>
 	  	<Row>
-				<Col xs={5}>
+				<Col lg={5} sm={9} smOffset={3} xs={9} xsOffset={2}>
 					<ImageCarousel item={item}/>
-					<div className="price-tag">
-						<Label bsStyle="primary">${parseFloat(item.cost).toFixed(2)}</Label>
-					</div>
 				</Col>
-				<Col xs={7} className="modal-text modal-description-body">
+			</Row>
+			<Row>
+				<Col lg={12} xs={12} className="modal-text">
 					{decodeText(item.description)}
 				</Col>
 	  	</Row>
+			<div className="price-tag pull-left">
+				<Label bsStyle="primary">${parseFloat(item.cost).toFixed(2)}</Label>
+			</div>
 		  { user.userId == item.owner ?
 			  <Button bsStyle="warning"
 		      bsSize="small"
