@@ -11,12 +11,15 @@ class EmailButton extends Component {
 		const email = this.props.email;
 		const hidden = this.state.on ? "" : "hidden ";
 		const emailBox = <input
-			size={email.length + 2}
-			maxSize={30}
+			size={20}
 			readOnly="readonly"
 			ref='emailbox'
 			className={hidden + "pull-right"}
-			value={email}/>;
+			value={email}
+			onClick={()=>{
+				this.refs.emailbox.focus();
+				this.refs.emailbox.select();
+			}}/>;
 		return <div className="row email-row">
 			<Button bsStyle="primary"
 		  	bsSize="small"
