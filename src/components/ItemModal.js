@@ -29,7 +29,7 @@ const ItemModal = ({ item, show, onHide, user, onClickEdit }) => (
 		  	<div className="row email-row">
 				  <Button bsStyle="warning"
 			      bsSize="small"
-			      className="pull-right edit-item-button"
+			      className="pull-right"
 			      onClick={onClickEdit}>
 		      	  <span className="glyphicon glyphicon-pencil"/>
 	    	  </Button>
