@@ -13,7 +13,7 @@ const ItemModal = ({ item, show, onHide, user, onClickEdit }) => (
 	  </Modal.Header>
 	  <Modal.Body>
 	  	<Row>
-				<Col lg={5} sm={9} smOffset={3} xs={9} xsOffset={2}>
+				<Col lg={5} sm={9} smOffset={3} xs={9}>
 					<ImageCarousel item={item}/>
 				</Col>
 			</Row>
