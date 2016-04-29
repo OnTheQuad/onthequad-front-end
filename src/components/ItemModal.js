@@ -13,7 +13,7 @@ const ItemModal = ({ item, show, onHide, user, onClickEdit }) => (
 	  </Modal.Header>
 	  <Modal.Body>
 	  	<Row>
-				<Col lg={5} sm={9} smOffset={3} xs={9} xsOffset={2}>
+				<Col lg={5} sm={9} smOffset={3} xs={9}>
 					<ImageCarousel item={item}/>
 				</Col>
 			</Row>
@@ -26,13 +26,15 @@ const ItemModal = ({ item, show, onHide, user, onClickEdit }) => (
 				<Label bsStyle="primary">${parseFloat(item.cost).toFixed(2)}</Label>
 			</div>
 		  { user.userId == item.owner ?
-			  <Button bsStyle="warning"
-		      bsSize="small"
-		      className="pull-right edit-item-button"
-		      onClick={onClickEdit}>
-	      	  <span className="glyphicon glyphicon-pencil"/>
-	      	  </Button> :
-	      	<EmailButton email={item.email}/>
+		  	<div className="row email-row">
+				  <Button bsStyle="warning"
+			      bsSize="small"
+			      className="pull-right"
+			      onClick={onClickEdit}>
+		      	  <span className="glyphicon glyphicon-pencil"/>
+	    	  </Button>
+	      </div> :
+      	<EmailButton email={item.email}/>
 			}
 	  </Modal.Body>
 	  <Modal.Footer>
